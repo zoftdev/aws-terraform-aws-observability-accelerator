@@ -1,0 +1,19 @@
+
+
+pre-Required
+    1. cluster must have odc-provider enable for adot authorizing
+
+        eksctl utils associate-iam-oidc-provider \
+        --region ap-southeast-1 \
+        --cluster hlex-obs-2 \
+        --approve
+    2. role must add attch polict
+        docs/iam/min-iam-policy.json
+
+
+
+run terraform @ /examples/existing-cluster-join
+    1. modify variable.tf
+    2. run terraform apply
+    
+
