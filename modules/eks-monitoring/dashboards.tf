@@ -68,7 +68,7 @@ spec:
       GRAFANA_APISERVER_ADVANCED_DASH_URL: ${local.apiserver_monitoring_config.dashboards.advanced}
       GRAFANA_APISERVER_TROUBLESHOOTING_DASH_URL: ${local.apiserver_monitoring_config.dashboards.troubleshooting}
 YAML
-  count      = var.enable_apiserver_monitoring ? 1 : 0
+  count      = var.enable_apiserver_monitoring && var.enable_dashboards ? 1 : 0
   depends_on = [module.external_secrets]
 }
 
